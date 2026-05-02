@@ -59,7 +59,7 @@ export default function PopularTests() {
         </div>
 
         {/* CARDS GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 ">
           {tests.map((test) => (
             <div
               key={test.id}

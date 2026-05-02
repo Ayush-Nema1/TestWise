@@ -1,4 +1,11 @@
 import Image from "next/image";
+import { House } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
+import { Headset } from 'lucide-react';
+import { Lock } from 'lucide-react';
+import { Pill } from 'lucide-react';
+import { Zap } from 'lucide-react';
+import { Clock,  Tag, Search } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -12,7 +19,7 @@ export default function Hero() {
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 leading-tight">
             Your Health.
             <br />
-            <span className="text-green-600">Your Choice.</span>
+            <p className="text-blue-600"><span  className="text-green-600"> Your </span> Choice.</p>
           </h1>
 
           <p className="mt-4 text-gray-500 text-lg max-w-lg">
@@ -20,13 +27,19 @@ export default function Hero() {
           </p>
 
           {/* FEATURE BADGES */}
-          <div className="flex flex-wrap gap-3 mt-6 text-sm text-gray-700">
-            {["Reports in 6 Hours", "Home Sample Collection", "Certified Labs", "Best Price Guarantee"].map((item) => (
-              <span key={item} className="flex items-center gap-1 bg-white border border-blue-100 px-3 py-1 rounded-full shadow-sm">
-                <span className="text-green-500 font-bold">✔</span> {item}
-              </span>
-            ))}
-          </div>
+          <div className="flex flex-wrap gap-2 mt-6">
+  {[
+    { icon: <Clock size={14} className="text-blue-600" />, label: "Reports in 6 Hours" },
+    { icon: <House size={14} className="text-blue-600" />, label: "Home Sample Collection" },
+    { icon: <ShieldCheck size={14} className="text-blue-600" />, label: "Certified Labs" },
+    { icon: <Tag size={14} className="text-blue-600" />, label: "Best Price Guarantee" },
+  ].map((item) => (
+    <span key={item.label} className="flex items-center gap-2 bg-white border border-[#E2EAF4] px-4 py-1.5 rounded-full text-sm font-medium text-[#1C2B45]">
+      {item.icon} {item.label}
+    </span>
+  ))}
+</div>
+
 
           {/* SEARCH BAR */}
           <div className="mt-8 flex items-center bg-white rounded-xl shadow-md overflow-hidden max-w-xl border border-blue-100">
@@ -90,21 +103,62 @@ export default function Hero() {
       </div>
 
       {/* BOTTOM FEATURE BAR */}
-      <div className="max-w-7xl mx-auto mt-12 grid grid-cols-2 md:grid-cols-6 gap-4 text-center text-sm">
-        {[
-          { icon: "⚡", label: "Fast Reports in 6 Hours*" },
-          { icon: "🏠", label: "Home Sample Collection" },
-          { icon: "💊", label: "Lowest Medicine Prices" },
-          { icon: "🔒", label: "100% Secure Transactions" },
-          { icon: "✅", label: "Verified Labs Only" },
-          { icon: "🎧", label: "24/7 Support" },
-        ].map((item) => (
-          <div key={item.label} className="bg-white shadow-sm rounded-xl py-4 px-3 hover:shadow-md transition flex flex-col items-center gap-2">
-            <span className="text-2xl">{item.icon}</span>
-            <p className="text-gray-700 font-medium leading-snug">{item.label}</p>
-          </div>
-        ))}
+      {/* BOTTOM FEATURE BAR */}
+<div className="max-w-7xl mx-auto mt-10 bg-white rounded-2xl px-6 py-4">
+  <div className="grid grid-cols-2 md:grid-cols-6 divide-x divide-[#E8EFF8]">
+    {[
+      {
+        icon: (
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <circle cx="11" cy="11" r="10" stroke="#16A34A" strokeWidth="1.5"/>
+            <path d="M7 11.5L10 14.5L15 8.5" stroke="#16A34A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        ),
+        bg: "bg-green-50",
+        label: "Fast Reports in", bold: "6 Hours*"
+      },
+      {
+        icon: (
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M11 3L4 7V11C4 15 7.5 18.5 11 19C14.5 18.5 18 15 18 11V7L11 3Z" stroke="#16A34A" strokeWidth="1.5" fill="#DCFCE7"/>
+            <path d="M8 11H14M11 8V14" stroke="#16A34A" strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
+        ),
+        bg: "bg-green-50",
+        label: "Home", bold: "Sample Collection"
+      },
+      {
+        icon: <Pill size={20} className="text-violet-600" />,
+        bg: "bg-violet-50",
+        label: "Lowest", bold: "Medicine Prices"
+      },
+      {
+        icon: <Lock size={20} className="text-orange-500" />,
+        bg: "bg-orange-50",
+        label: "100% Secure", bold: "Transactions"
+      },
+      {
+        icon: <ShieldCheck size={20} className="text-blue-600" />,
+        bg: "bg-blue-50",
+        label: "Verified", bold: "Labs Only"
+      },
+      {
+        icon: <Headset size={20} className="text-blue-600" />,
+        bg: "bg-blue-50",
+        label: "24/7", bold: "Support"
+      },
+    ].map((item) => (
+      <div key={item.bold} className="flex items-center gap-3 px-4 py-2">
+        <div className={`w-10 h-10 rounded-full ${item.bg} flex items-center justify-center flex-shrink-0`}>
+          {item.icon}
+        </div>
+        <p className="text-[13px] text-[#1C2B45] leading-snug">
+          {item.label} <span className="font-bold block">{item.bold}</span>
+        </p>
       </div>
+    ))}
+  </div>
+</div>
 
     </section>
   );

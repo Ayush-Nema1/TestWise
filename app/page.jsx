@@ -4,6 +4,11 @@ import Populartest from "./components/Test";
 import Findmedi from "./components/Findmedi";
 import MedicineCompareCard from "./components/Compare";
 import TestCTA from "./components/TestCTA";
+import HowitWorkks from "./components/Howworks"
+import TestPositiveCard from "./components/Testpositive";
+import ConsultDoctorCard from "./components/Consultdoctor";
+import CalorieTracker from "./components/Calorietracker";
+import Footer from "./components/Fottter";
 export default function Home() {
   return (
     <>
@@ -29,9 +34,26 @@ export default function Home() {
     </div>
   </div>
 </div>
+     
+     <div className="px-4 py-10 bg-white">
+<HowitWorkks/>
+     </div>
+      
   <div className="bg-[#F5F8FC] py-10">
+    
       <TestCTA />
     </div>
+
+     <div className="bg-white py-8">
+  <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 ">
+     <ConsultDoctorCard />
+    <TestPositiveCard />
+   
+    <CalorieTracker />  
+  </div>
+</div>
+<Footer/>
     </>
+
   );
 }
