@@ -21,7 +21,7 @@ export default function CompareMedicine() {
 
       {/* Title */}
       <h2 className="text-lg font-semibold text-gray-800">
-        Find the best deals on your prescriptions.
+       Find cheaper alternatives with same composition
       </h2>
       <p className="text-gray-500 text-sm mb-4">
         Find the best deals on your prescriptions.

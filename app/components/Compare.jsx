@@ -24,7 +24,7 @@ export default function MedicineCompareUpload() {
 
       {/* Title */}
       <h2 className="text-lg font-semibold text-gray-800">
-        Match your new medicince with old or doctor Prescription.
+       Check if Two Medicines are Same
        </h2>
       <p className="text-sm text-gray-500 mb-5">
         Match two medicines by composition & price.

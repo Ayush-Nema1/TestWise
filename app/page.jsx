@@ -9,6 +9,7 @@ import TestPositiveCard from "./components/Testpositive";
 import ConsultDoctorCard from "./components/Consultdoctor";
 import CalorieTracker from "./components/Calorietracker";
 import Footer from "./components/Fottter";
+import Whychoose from "./components/Whychoose"
 export default function Home() {
   return (
     <>
@@ -52,6 +53,8 @@ export default function Home() {
     <CalorieTracker />  
   </div>
 </div>
+<div className="bg-white"> <Whychoose/> </div>
+
 <Footer/>
     </>
 
