@@ -21,7 +21,7 @@ export default function CompareMedicine() {
 
       {/* Title */}
       <h2 className="text-lg font-semibold text-gray-800">
-        Compare Medicine Prices
+        Find the best deals on your prescriptions.
       </h2>
       <p className="text-gray-500 text-sm mb-4">
         Find the best deals on your prescriptions.
@@ -62,7 +62,7 @@ export default function CompareMedicine() {
 
       {/* Button */}
       <button className="mt-auto bg-green-600 hover:bg-green-700 text-white w-full py-2.5 rounded-xl text-sm font-medium transition">
-        Compare Prices
+        View Best Price
       </button>
     </div>
   );

@@ -1,17 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { Search } from "lucide-react";
+import { ArrowLeftRight, ImagePlus } from "lucide-react";
 
-export default function CompareMedicine() {
-  const [query, setQuery] = useState("");
+export default function MedicineCompareUpload() {
+  const [img1, setImg1] = useState(null);
+  const [img2, setImg2] = useState(null);
+  const [med1, setMed1] = useState("");
+  const [med2, setMed2] = useState("");
 
-  const medicines = [
-    { name: "Generic", price: 12 },
-    { name: "Crocin", price: 25 },
-    { name: "Calpol", price: 35 },
-    { name: "Calpol", price: 35 },
-  ];
+  const handleImage = (e, setImage) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(URL.createObjectURL(file));
+    }
+  };
 
   return (
     <div className="w-full bg-[#F8FAFC] border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col h-full">
@@ -21,48 +24,92 @@ export default function CompareMedicine() {
 
       {/* Title */}
       <h2 className="text-lg font-semibold text-gray-800">
-        Compare Medicine Prices
-      </h2>
-      <p className="text-gray-500 text-sm mb-4">
-        Find the best deals on your prescriptions.
+        Match your new medicince with old or doctor Prescription.
+       </h2>
+      <p className="text-sm text-gray-500 mb-5">
+        Match two medicines by composition & price.
       </p>
 
-      {/* Search */}
-      <div className="flex items-center border border-gray-200 rounded-xl px-3 py-2 mb-5 bg-white focus-within:ring-2 focus-within:ring-green-500">
-        <Search className="text-gray-400 w-4 h-4 mr-2" />
-        <input
-          type="text"
-          placeholder="Search medicine..."
-          className="outline-none w-full text-sm bg-transparent"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-      </div>
+      {/* MAIN */}
+      <div className="flex items-center gap-4 mb-5">
 
-      {/* Prices */}
-      <div className="grid grid-cols-4 gap-3 mb-5">
-        {medicines.map((med, index) => (
-          <div
-            key={index}
-            className={`rounded-xl py-3 px-2 text-center border transition ${
-              index === 0
-                ? "border-green-400 bg-green-50"
-                : "border-gray-200"
-            }`}
-          >
-            <p className="text-base font-semibold text-green-600">
-              ₹{med.price}
-            </p>
-            <p className="text-[11px] text-gray-500 mt-1 truncate">
-              {med.name}
-            </p>
+        {/* LEFT */}
+        <div className="flex-1">
+          <label className="cursor-pointer block">
+            <div className="border-2 border-dashed border-green-300 rounded-xl p-5 flex flex-col items-center justify-center bg-green-50 hover:bg-green-100 transition">
+              
+              {img1 ? (
+                <img src={img1} className="w-20 h-20 object-contain" />
+              ) : (
+                <>
+                  <ImagePlus className="w-5 h-5 text-green-600 mb-1" />
+                  <p className="text-xs text-green-600 font-medium">
+                    Add image
+                  </p>
+                </>
+              )}
+            </div>
+
+            <input
+              type="file"
+              className="hidden"
+              onChange={(e) => handleImage(e, setImg1)}
+            />
+          </label>
+
+          <input
+            type="text"
+            placeholder="Medicine 1"
+            value={med1}
+            onChange={(e) => setMed1(e.target.value)}
+            className="mt-3 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-green-500"
+          />
+        </div>
+
+        {/* CENTER ICON */}
+        <div className="flex items-center justify-center">
+          <div className="bg-gray-100 p-3 rounded-full">
+            <ArrowLeftRight className="text-green-600 w-4 h-4" />
           </div>
-        ))}
+        </div>
+
+        {/* RIGHT */}
+        <div className="flex-1">
+          <label className="cursor-pointer block">
+            <div className="border-2 border-dashed border-green-300 rounded-xl p-5 flex flex-col items-center justify-center bg-green-50 hover:bg-green-100 transition">
+              
+              {img2 ? (
+                <img src={img2} className="w-20 h-20 object-contain" />
+              ) : (
+                <>
+                  <ImagePlus className="w-5 h-5 text-green-600 mb-1" />
+                  <p className="text-xs text-green-600 font-medium">
+                    Add image
+                  </p>
+                </>
+              )}
+            </div>
+
+            <input
+              type="file"
+              className="hidden"
+              onChange={(e) => handleImage(e, setImg2)}
+            />
+          </label>
+
+          <input
+            type="text"
+            placeholder="Medicine 2"
+            value={med2}
+            onChange={(e) => setMed2(e.target.value)}
+            className="mt-3 w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-green-500"
+          />
+        </div>
       </div>
 
       {/* Button */}
       <button className="mt-auto bg-green-600 hover:bg-green-700 text-white w-full py-2.5 rounded-xl text-sm font-medium transition">
-        Compare Prices
+       Check is same
       </button>
     </div>
   );
