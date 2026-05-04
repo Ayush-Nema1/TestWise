@@ -1,8 +1,10 @@
+
 "use client";
+import Link from "next/link";
 
 import { Info, ChevronRight, FlaskConical } from "lucide-react";
 import LabRow from "./LabRow";
-
+import Image from "next/image";
 const CATEGORY_STYLES = {
   blood:    { bg: "bg-red-50",    icon: "text-red-400",    border: "border-red-100" },
   diabetes: { bg: "bg-blue-50",   icon: "text-blue-400",   border: "border-blue-100" },
@@ -18,11 +20,16 @@ const BADGE_STYLES = {
   popular:     "bg-orange-50 text-orange-600 border border-orange-200",
 };
 
-function TestImage({ category }) {
-  const s = CATEGORY_STYLES[category] || CATEGORY_STYLES.default;
+function TestImage({ image }) {
   return (
-    <div className={`w-[52px] h-[52px] flex-shrink-0 rounded-xl ${s.bg} border ${s.border} flex items-center justify-center`}>
-      <FlaskConical className={`w-6 h-6 ${s.icon}`} strokeWidth={1.5} />
+    <div className="w-[52px] h-[52px] rounded-xl bg-red-50 border flex items-center justify-center overflow-hidden">
+      <Image
+        src={image}
+        alt="test"
+        width={50}
+        height={50}
+        className="object-contain"
+      />
     </div>
   );
 }
@@ -38,11 +45,15 @@ export default function TestCard({ test }) {
 
       {/* Top: test info + price */}
       <div className="flex items-start gap-4 px-5 pt-5 pb-4">
-        <TestImage category={test.category} />
+        <TestImage image={test.image} />
 
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <h2 className="text-[15px] font-bold text-gray-900 leading-snug">{test.name}</h2>
+            <h2 className="text-[15px] font-bold text-gray-900 leading-snug">
+  <Link href={`/test/${test.slug}`} className="hover:text-[#1d6fce]">
+    {test.name}
+  </Link>
+</h2>
             {badgeLabel && (
               <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-md whitespace-nowrap ${badgeClass}`}>
                 {badgeLabel}
