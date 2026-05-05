@@ -6,7 +6,7 @@ import { ChevronDown, MapPin, Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Tests", href: "/tests" },
+  { label: "Tests", href: "/test" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "About Us", href: "/about" },
 ];

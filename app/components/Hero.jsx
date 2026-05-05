@@ -29,9 +29,9 @@ export default function Hero() {
           {/* FEATURE BADGES */}
           <div className="flex flex-wrap gap-2 mt-6">
   {[
-    { icon: <Clock size={14} className="text-blue-600" />, label: "Reports in 6 Hours" },
-    { icon: <House size={14} className="text-blue-600" />, label: "Home Sample Collection" },
-    { icon: <ShieldCheck size={14} className="text-blue-600" />, label: "Certified Labs" },
+    { icon: <Clock size={14} className="text-blue-600" />, label: "Reports in 6 Hours*" },
+    { icon: <House size={14} className="text-blue-600" />, label: "Home Sample Collection*" },
+    { icon: <ShieldCheck size={14} className="text-blue-600" />, label: "Certified Labs Partner" },
     { icon: <Tag size={14} className="text-blue-600" />, label: "Best Price Guarantee" },
   ].map((item) => (
     <span key={item.label} className="flex items-center gap-2 bg-white border border-[#E2EAF4] px-4 py-1.5 rounded-full text-sm font-medium text-[#1C2B45]">
@@ -125,7 +125,7 @@ export default function Hero() {
           </svg>
         ),
         bg: "bg-green-50",
-        label: "Home", bold: "Sample Collection"
+        label: "Home", bold: "Sample Collection*"
       },
       {
         icon: <Pill size={20} className="text-violet-600" />,
@@ -140,7 +140,7 @@ export default function Hero() {
       {
         icon: <ShieldCheck size={20} className="text-blue-600" />,
         bg: "bg-blue-50",
-        label: "Verified", bold: "Labs Only"
+        label: "Verified", bold: "Labs Partner"
       },
       {
         icon: <Headset size={20} className="text-blue-600" />,
