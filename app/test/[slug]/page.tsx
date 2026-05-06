@@ -9,7 +9,7 @@ import {
 import { testData } from "@/app/data/testData";
 import LabsSection from "@/app/components/Testbooking/LabSection";
 import SaveButton from "@/app/components/Testbooking/SaveButton";
-import Navbar from "@/app/components/Navbar";
+import Navbar from "@/app/components/home/Navbar";
 
 /* ─── Static lab data per slug ─── */
 const labsData = {

@@ -69,7 +69,7 @@ export default function PrivacyPolicy() {
               <ul className="list-disc ml-6 space-y-2 text-gray-600">
                 <li><strong>Identity Data:</strong> Name, age, and gender (required by labs for test accuracy).</li>
                 <li><strong>Contact Data:</strong> Phone number and email for sending booking confirmations and report links.</li>
-                <li><strong>Transaction Data:</strong> Details about payments made on the platform (we do not store card/bank details).</li>
+                <li><strong>Booking Data:</strong> The laboratory you selected and the test(s) you booked, along with the amount associated with your order. We do not store how, when, where, or through what method the payment was made. No card, bank, or transaction details are collected or stored by TestWise.</li>
               </ul>
             </section>
 

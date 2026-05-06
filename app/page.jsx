@@ -1,15 +1,15 @@
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Populartest from "./components/Test";
-import Findmedi from "./components/Findmedi";
-import MedicineCompareCard from "./components/Compare";
-import TestCTA from "./components/TestCTA";
-import HowitWorkks from "./components/Howworks"
-import TestPositiveCard from "./components/Testpositive";
-import ConsultDoctorCard from "./components/Consultdoctor";
-import CalorieTracker from "./components/Calorietracker";
+import Hero from "./components/home/Hero";
+import Populartest from "./components/home/Test";
+import Findmedi from "./components/home/Findmedi";
+import MedicineCompareCard from "./components/home/Compare";
+import TestCTA from "./components/home/TestCTA";
+import HowitWorkks from "./components/home/Howworks"
+import TestPositiveCard from "./components/home/Testpositive";
+import ConsultDoctorCard from "./components/home/Consultdoctor";
+import CalorieTracker from "./components/home/Calorietracker";
 import Footer from "./components/Fottter";
-import Whychoose from "./components/Whychoose"
+import Whychoose from "./components/home/Whychoose"
 export default function Home() {
   return (
     <>

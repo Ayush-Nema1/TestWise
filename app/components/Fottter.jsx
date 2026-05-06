@@ -42,11 +42,11 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold mb-3 text-white">Company</h3>
           <ul className="space-y-2 text-sm text-gray-300">
-            <li className="hover:text-white cursor-pointer">About Us</li>
-            <li className="hover:text-white cursor-pointer">Blogs</li>
-            <li className="hover:text-white cursor-pointer">Partner With Us</li>
-            <li className="hover:text-white cursor-pointer">Careers</li>
-            <li className="hover:text-white cursor-pointer">Contact Us</li>
+            <li className="hover:text-white cursor-pointer"> <Link href="/about">  About Us  </Link> </li>
+            <li className="hover:text-white cursor-pointer">  <Link href="/"> Blogs </Link> </li>
+            <li className="hover:text-white cursor-pointer"> <Link href="Partnerwithus"> Partner With Us </Link></li>
+            <li className="hover:text-white cursor-pointer">  <Link href="carrer" >   Careers </Link> </li>
+            <li className="hover:text-white cursor-pointer">  <Link href="Contactus"> Contact Us </Link> </li>
           </ul>
         </div>
 

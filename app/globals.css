@@ -1,4 +1,12 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Baaki sab kuch delete kar do jo dark mode background laa raha hai */
+body {
+  background-color: #F0F4FA;
+}
 
 :root {
   --background: #ffffff;
