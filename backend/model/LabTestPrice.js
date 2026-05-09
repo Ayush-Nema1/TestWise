@@ -8,14 +8,14 @@ const labTestPricingSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Lab",
       required: true,
-      index: true,
+   
     },
 
     // TEST REFERENCE
 
     test_id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "TestMaster",
+      ref: "MasterTest",
       required: true,
       index: true,
     },
