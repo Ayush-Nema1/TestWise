@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import { Mail, MessageSquare, MapPin, ShieldCheck, Zap } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Fottter';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Fottter";
 
 export default function Contact() {
   return (

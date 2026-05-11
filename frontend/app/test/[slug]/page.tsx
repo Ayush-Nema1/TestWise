@@ -6,10 +6,10 @@ import {
   Clock, FlaskConical, Truck, ShieldCheck, FileText, BookOpen,
   RefreshCw, CheckCircle2, X,IndianRupee,Search, BadgeCheck
 } from "lucide-react";
-import { testData } from "@/app/data/testData";
-import LabsSection from "@/app/components/Testbooking/LabSection";
-import SaveButton from "@/app/components/Testbooking/SaveButton";
-import Navbar from "@/app/components/home/Navbar";
+import { testData } from "@/data/testData";
+import LabsSection from "@/components/Testbooking/LabSection";
+import SaveButton from "@/components/Testbooking/SaveButton";
+import Navbar from "@/components/Navbar";
 
 /* ─── Static lab data per slug ─── */
 const labsData = {

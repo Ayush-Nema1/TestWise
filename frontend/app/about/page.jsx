@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Target, Zap, Heart, Search, BadgeIndianRupee, Pill, ArrowLeftRight } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Fottter';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Fottter";
 
 export default function AboutUs() {
   return (

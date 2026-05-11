@@ -10,8 +10,8 @@ import {
   Microscope,
   ShieldX
 } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Fottter';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Fottter";
 
 export default function MedicalDisclaimer() {
   return (

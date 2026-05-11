@@ -11,8 +11,8 @@ import {
   IndianRupee,
   Send,
 } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Fottter';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Fottter";
 
 const partnerTypes = [
   {
