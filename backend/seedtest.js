@@ -43,6 +43,7 @@ await MasterTest.insertMany(uniqueTests);
 
     console.log("Master Tests Inserted Successfully");
 
+    
     process.exit();
   })
   .catch((err) => {
