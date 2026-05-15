@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, MapPin, Menu, X } from "lucide-react";
+import { ChevronDown, MapPin, Menu, X, ShoppingBag } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -14,12 +14,12 @@ const navLinks = [
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState("Home");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true); // Simulate logged-in state
 
   return (
     <header className="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-
           {/* Left: Logo + Location */}
           <div className="flex items-center gap-4">
             {/* Logo */}
@@ -38,7 +38,6 @@ export default function Navbar() {
             <button className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 text-sm text-gray-500 hover:border-gray-300 hover:bg-gray-50 transition-colors">
               <MapPin size={13} className="text-red-500" />
               <span>New Delhi, India</span>
-              
               <ChevronDown size={12} className="text-gray-400" />
             </button>
           </div>
@@ -66,12 +65,19 @@ export default function Navbar() {
 
           {/* Right: Auth Buttons + Mobile Menu Toggle */}
           <div className="flex items-center gap-2">
-            <button className="hidden sm:inline-flex items-center px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
-              Login
-            </button>
-            <button className="hidden sm:inline-flex items-center px-4 py-2 text-sm bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
-              Sign Up
-            </button>
+            {!isLoggedIn ? (
+              <button className="hidden sm:inline-flex items-center px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                Login
+              </button>
+            ) : (
+              <Link
+                href="/MyOrder"
+                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+              >
+                <ShoppingBag size={16} />
+                <span>My Orders</span>
+              </Link>
+            )}
 
             {/* Mobile Menu Button */}
             <button
@@ -101,7 +107,10 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                onClick={() => { setActiveLink(link.label); setMobileOpen(false); }}
+                onClick={() => {
+                  setActiveLink(link.label);
+                  setMobileOpen(false);
+                }}
                 className={`px-3 py-2.5 rounded-lg text-sm transition-colors ${
                   activeLink === link.label
                     ? "bg-blue-50 text-blue-600 font-medium"
@@ -114,13 +123,20 @@ export default function Navbar() {
           </nav>
 
           {/* Mobile Auth Buttons */}
-          <div className="flex gap-2 mt-4">
-            <button className="flex-1 py-2.5 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
-              Login
-            </button>
-            <button className="flex-1 py-2.5 text-sm bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
-              Sign Up
-            </button>
+          <div className="mt-4">
+            {!isLoggedIn ? (
+              <button className="w-full py-2.5 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                Login
+              </button>
+            ) : (
+              <Link
+                href="/MyOrder"
+                className="flex items-center justify-center gap-2 w-full py-2.5 text-sm bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+              >
+                <ShoppingBag size={16} />
+                <span>My Order</span>
+              </Link>
+            )}
           </div>
         </div>
       )}
